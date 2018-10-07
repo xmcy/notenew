@@ -1,0 +1,40 @@
+page {
+  text-align: center;
+}
+.main-canvas {
+  width: 414px;
+  height: 672px;
+  vertical-align: bottom;
+  position: fixed;
+  top: 9999rpx;
+  left: 9999rpx;
+}
+.poster-img {
+  display: block;
+  margin: 20rpx auto 25rpx;
+  width: 80%;
+  // height: 100%;
+  vertical-align: bottom;
+}
+
+.save-tips {
+  color: #666666;
+  font-size: 26rpx;
+}
+.save-btn {
+  display: inline-block;
+  margin: 34rpx auto 45rpx;
+  padding: 10rpx 36rpx;
+  color: #2E82FC;
+  font-size: 30rpx;
+  border: 1px solid #2E82FC;
+  border-radius: 40rpx;
+}
+
+.error {
+  margin: 30% auto 0;
+}
+.error text {
+  font-size: 24rpx;
+  color: #333;
+}

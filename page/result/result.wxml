@@ -1,0 +1,59 @@
+<view class="main {{result}}" style="min-height: {{screenHeight}}px;">
+  <view class="result-text">
+    <view class="first">{{resultTextMap[result][0]}}</view>
+    <view class="second" wx:if="{{result !== 'self'}}">{{resultTextMap[result][1]}}</view>
+  </view>
+
+  <view class="result-box">
+    <view class="result-user">
+      <view class="result-user-item" data-type="my" bindtap="changeScoreType">
+        <image class="win-icon" src="{{baseCDNUrl + '/web/note-new/win_icon.png'}}" alt="win" wx:if="{{result === 'win'}}"></image>
+        <image class="avatar" src="{{challengeResult.user.avatarUrl}}" alt="user avatar"></image>
+        <view class="username">{{challengeResult.user.nickName}}</view>
+        <view class="score">{{myTotalPoints}}分</view>
+        <image class="result-tag" src="{{baseCDNUrl + '/web/note-new/win_tag.png'}}" alt="win" wx:if="{{result === 'win'}}"></image>
+        <image class="result-tag" src="{{baseCDNUrl + '/web/note-new/tie_tag.png'}}" alt="tie" wx:if="{{result === 'tie'}}"></image>
+      </view>
+      <image wx:if="{{result !== 'self'}}" class="vs-icon" src="{{baseCDNUrl + '/web/note-new/vs_icon.png'}}"></image>
+      <view wx:if="{{result !== 'self'}}" class="result-user-item" data-type="friend" bindtap="changeScoreType">
+        <image class="avatar" src="{{friendInfo.avatarUrl}}" alt="user avatar"></image>
+        <view class="username">{{friendInfo.nickName}}</view>
+        <view class="score">{{friendTotalPoints}}分</view>
+      </view>
+    </view>
+
+    <view class="result-score {{result}} {{scoreType}}">
+      <view class="score-item">
+        <view class="label">准确度</view>
+        <view class="progress"><progress percent="{{scoreType === 'my' ? myPronAccuracy : friendPronAccuracy}}" stroke-width="10" color="#3B8AFC" backgroundColor="#BEBEBE" active="true" /></view>
+        <view class="score">{{scoreType === 'my' ? myPronAccuracy : friendPronAccuracy}}</view>
+      </view>
+      <view class="score-item">
+        <view class="label">完整度</view>
+        <view class="progress"><progress percent="{{scoreType === 'my' ? myPronCompletion : friendPronCompletion}}" stroke-width="10" color="#3B8AFC" backgroundColor="#BEBEBE" active="true" /></view>
+        <view class="score">{{scoreType === 'my' ? myPronCompletion : friendPronCompletion}}</view>
+      </view>
+      <view class="score-item">
+        <view class="label">流利度</view>
+        <view class="progress"><progress percent="{{scoreType === 'my' ? myPronFluency : friendPronFluency}}" stroke-width="10" color="#3B8AFC" backgroundColor="#BEBEBE" active="true" /></view>
+        <view class="score">{{scoreType === 'my' ? myPronFluency : friendPronFluency}}</view>
+      </view>
+
+      <view class="result-words" wx:if="{{scoreType === 'my' ? myWrongWords.length : friendWrongWords.length}}">
+        <view class="title"><text class="wrong">错词</text><text class="and">&</text><text class="leak">漏词</text></view>
+        <view class="words">
+          <text wx:for="{{scoreType === 'my' ? myWrongWords : friendWrongWords}}" class="word {{item.MatchTag == 2 ? 'leak' : ''}} {{item.PronAccuracy < 50 ? 'wrong' : ''}}">{{item.Word}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="result-rank">
+    <view>您击败了全国{{challengeResult.beatRate}}%的演讲者</view>
+    <view>排名第{{challengeResult.rank}}位</view>
+  </view>
+
+  <view class="result-share">
+    <button class="share-btn" bindtap="goToSharePage">合成我的演讲视频</button>
+  </view>
+</view>

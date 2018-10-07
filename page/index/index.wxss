@@ -1,0 +1,10 @@
+.rank-container .flex-row:last-child {
+  border-radius: 0 0 12rpx 12rpx;
+}
+.is-me .rank-num,
+.is-me .nick-name {
+  color: #EEBA4A !important;
+}
+.is-current {
+  background-color: #E6E6E6;
+}

@@ -1,0 +1,58 @@
+   <!--index.wxml-->
+<view class="container">
+  <view class="challengeGoal">
+    <view>{{videoTitle}}</view>
+  </view>
+  <!-- 视频区 -->
+  <video id="targetVideo" class='targetVideo' custom-cache="{{false}}"
+   show-progress="{{false}}" enable-progress-gesture="{{false}}" show-fullscreen-btn="{{true}}" show-play-btn="{{false}}" show-center-play-btn="{{false}}" controls="{{false}}" muted='{{true}}' autoplay="{{false}}" enable-progress-gesture="{{false}}" objectFit='fill' bindfullscreenchange='fullScreen' bindplay="startVideo" poster='http://file.wh.ministudy.com/web/note-new/jobs-stanford.png' src="{{videoSrc}}" bindended='endVideo'>
+    <cover-view class='clickMask' bindtap='pauseVideo' ></cover-view>
+    <cover-view wx:if='{{!chooseFlag}}' class="controls">
+      <cover-image class='poster' src='http://file.wh.ministudy.com/web/note-new/jobs-stanford.png'></cover-image>
+      <cover-view class="{{challengeFlag?'classicShow':'nochallenge'}}" wx:if="{{!isSelf}}" catchtap='palyClassic'>
+      原声赏析</cover-view>
+      <cover-view wx:if='{{challengeFlag || isSelf}}' class="challengeShow {{isSelf ? 'isSelf' : ''}}" catchtap='palyChallenge'>
+      {{challengeName}}的配音</cover-view>
+    </cover-view>
+  </video>
+  <!-- 录音区 -->
+  <view class='recorderWarpper' wx:if="{{!isSelf}}">
+    <view class='recording' wx:if='{{recorderFlag}}'>
+      <cover-image src='http://file.wh.ministudy.com/web/note-new/recording.png'></cover-image>
+    </view>
+    <view class='recording listenIcon' wx:if='{{listenFlag}}'>
+      <cover-image class='listenImage' src='../../image/listening.png'></cover-image>
+    </view>
+      <view class="recorderLine {{currentIndex==index?'active':''}}" wx:for='{{videoData}}' wx:for-item="videoLyric" wx:key="{{index}}">
+        <view class='lyric'>{{videoLyric.lyric}}</view>
+      <view class="actions">
+        <view wx:if='{{videoLyric.status&&myUserInfo}}' class='pre_lis' data-index='{{index}}' bindtap='playMyvideo' >
+          <image src='http://file.wh.ministudy.com/web/note-new/listen.png'></image>
+          试听
+        </view>
+        <view wx:if='{{videoLyric.status&&myUserInfo}}' class='repeatVideo' bindtouchstart='startRecord' bindtouchend='endRecorder' data-index='{{index}}' data-lyric='{{videoLyric.lyric}}'>
+          <image src='http://file.wh.ministudy.com/web/note-new/preRecorder.png'></image>
+          按住重读
+        </view>
+        <button wx:if='{{!myUserInfo}}' class='get-info-btn' open-type="getUserInfo" hover-class="" bindgetuserinfo="getUserInfo">
+          <image class='videoHandle' src='http://file.wh.ministudy.com/web/note-new/preRecorder.png' ></image>
+          点击开始
+        </button>
+        <view wx:if='{{!videoLyric.status&&myUserInfo}}' class='repeatVideo record-btn' bindtouchstart='startRecord' bindtouchend='endRecorder' data-index='{{index}}' data-lyric='{{videoLyric.lyric}}'>
+          <image src='http://file.wh.ministudy.com/web/note-new/preRecorder.png'></image>
+          按住朗读
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 提交 -->
+  <view class='bottomBar' wx:if="{{!isSelf}}">
+    <view class="submitBtn {{couldFlag?'':'submitOff'}}" bindtap='submitjudge'>计算演讲评分</view>
+  </view>
+
+  <view class="ads-box" wx:if="{{isSelf}}">
+    <navigator id="ads-navi" target="miniProgram" open-type="navigate" app-id="wxa15630506d3a70e4" path="/pages/live-room/index/index">
+      <image class="ads-image" src="http://file.wh.ministudy.com/web/note-new/ads_bottom.png" mode="widthFix"></image>
+    </navigator>
+  </view>
+</view>

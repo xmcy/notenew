@@ -1,0 +1,12 @@
+<view class="main" wx:if="{{!isError}}" style="min-height:{{screenHeight}}px;width:{{screenWidth}}px;">
+  <canvas class="main-canvas" canvas-id="shareCanvas"></canvas>
+  <view wx:if="{{showImg}}">
+    <view class="save-tips top">保存海报，通过海报可观看你的演讲视频</view>
+    <image class="poster-img save-pic" src="{{canvasImgUrl}}" data-src="{{canvasImgUrl}}" bindtap="previewImg" mode="widthFix"></image>
+    <view class="save-tips">分享海报给好友，邀请他们来挑战吧</view>
+    <text class="save-btn save-pic" bindtap="saveImg" wx:if="{{isSaveBtnShow}}">保存到相册</text>
+  </view>
+</view>
+<view class="error" wx:if="{{isError}}">
+  <text>图片加载失败，请稍后再试</text>
+</view>

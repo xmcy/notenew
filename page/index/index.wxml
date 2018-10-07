@@ -1,0 +1,47 @@
+<view style="background-color: #262C3A;">
+  <video id="video" muted="{{true}}" direction="90" custom-cache="{{false}}"
+         show-progress="{{false}}" enable-progress-gesture="{{false}}" show-fullscreen-btn="{{true}}"
+         show-play-btn="{{true}}" show-center-play-btn="{{true}}" controls bindtap="onPause" bindended="onVideoEnded"
+         bindtimeupdate="onProgress" bindwaiting="onWaiting" binderror="onError" bindplay="onPlay" bindpause="onPause"
+         style="width:100%;height:450rpx;" objectFit='fill'
+         src="{{videoSrc}}" poster="{{Tool.baseCDNUrl + '/web/note-new/jobs-stanford.png'}}">
+
+    <!-- <cover-image wx:if="{{cover}}" src="{{Tool.baseCDNUrl+'/web/note-new/play@2x.png'}}"
+                 bindtap="onPlay" class="center" mode="aspectFit"
+                 style="{{'width: 45px;height: 45px;margin-top:'+(videoWidth*720/960-72)/2+'px;'}}"></cover-image> -->
+  </video>
+  <view class="text-center" style="padding: 40rpx 0;">
+    <button class="clickable jumpto" bindtap="goto" data-url="/page/recorder/recorder"
+            style="color: #3B8AFC;font-size: 34rpx;width: calc(100% - 24px);border-radius: 8rpx;border: solid 1px #3B8AFC;background-color: inherit;">我要挑战演讲</button>
+  </view>
+  <view style="padding: 10rpx 30rpx;">
+    <view class="rank-container" style="background-color: #F2F2F2;border-radius: 12rpx;">
+      <view style="color: #393939;font-size: 34rpx;padding: 30rpx;">演讲排行榜</view>
+      <view wx:for="{{list}}" wx:key="{{index}}" class="flex-row flex-middle clickable {{item.user.openId === openId ? 'is-me' : ''}} {{currentItem === index ? 'is-current' : ''}}"
+            style="padding: 20rpx 0;border: none;margin: 0;line-height: 1.8;"
+            bindtap="audioPlay" data-index="{{index}}">
+        <view class="flex-col-1 text-center">
+          <image wx:if="{{item.rankNum <=3}}" src="{{Tool.baseCDNUrl+'/web/note-new/b-'+(item.rankNum)+'@2x.png'}}"
+                 mode="aspectFit" style="width: 50rpx;height: 50rpx;"></image>
+          <view wx:else class="rank-num" style="font-size: 32rpx;color: #3B8AFC;">{{item.rankNum}}</view>
+        </view>
+        <view class="flex-col-2 text-center">
+          <image src="{{item.user.avatarUrl}}" mode="aspectFit" style="width: 84rpx;height: 84rpx;" class="circle"></image>
+        </view>
+        <view class="flex-col-6 text-left">
+          <view style="font-size: 30rpx;color: #333;" class="nowrap-1 nick-name">{{item.user.nickName}}</view>
+          <view style="font-size: 26rpx;color: #999;">{{item.totalPoints}}分</view>
+        </view>
+        <view class="flex-col-3 text-center">
+          <button style="font-size: 26rpx;color: #FFF;border-radius: 24rpx;background-color: #86A7FB;margin: 0 30rpx;line-height: 48rpx;white-space: nowrap;">play</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <audio id="audio" class='hidden' bindended="audioEnded" bindplay="audioPlaying"></audio>
+  <view class="ads-box">
+    <navigator id="ads-navi" target="miniProgram" open-type="navigate" app-id="wxa15630506d3a70e4" path="/pages/live-room/index/index">
+      <image class="ads-image" src="{{Tool.baseCDNUrl + '/web/note-new/ads_bottom.png'}}" mode="widthFix"></image>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,205 @@
+page {
+  color: #fff;
+  text-align: center;
+}
+.main {
+  width: 100%;
+  padding-top: 60rpx;
+  box-sizing: border-box;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.main.win,
+.main.self {
+  background-image: url('http://file.wh.ministudy.com/web/note-new/win_bg.png');
+}
+.main.lose {
+  background-image: url('http://file.wh.ministudy.com/web/note-new/lose_bg.png');
+}
+.main.tie {
+  background-image: url('http://file.wh.ministudy.com/web/note-new/tie_bg.png');
+}
+.result-text .first {
+  font-size: 34rpx;
+}
+.result-text .second {
+  margin-top: 30rpx;
+  font-size: 42rpx;
+}
+.result-box {
+  width: 80%;
+  margin: 50rpx auto 30rpx;
+  position: relative;
+}
+.result-box::before,
+.result-box::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 15rpx;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.result-box::before {
+  top: -11rpx;
+  background-image: url('http://file.wh.ministudy.com/web/note-new/dot_up.png');
+}
+.result-box::after {
+  bottom: -12rpx;
+  background-image: url('http://file.wh.ministudy.com/web/note-new/dot_down.png');
+}
+.result-user {
+  padding: 40rpx 0;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  background-color: #fff;
+  background-image: url('http://file.wh.ministudy.com/web/note-new/user_bg.png');
+  background-size: contain;
+}
+.result-user > .result-user-item {
+  width: 50%;
+}
+.result-user-item .win-icon {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 4rpx;
+  left: 80rpx;
+}
+.result-user-item .avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.result-user-item .username {
+  font-size: 32rpx;
+  color: #333;
+  position: relative;
+  z-index: 2;
+}
+.result-user-item .score {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  color: #666;
+  position: relative;
+  z-index: 2;
+}
+
+.result-user-item .result-tag {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 160rpx;
+  left: 180rpx;
+}
+
+.result-user .vs-icon {
+  width: 72rpx;
+  height: 96rpx;
+  position: absolute;
+  margin-top: 24rpx;
+}
+.result-score {
+  position: relative;
+  padding: 48rpx;
+  background: #E9F2FF;
+}
+.result-score::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: -45rpx;
+  left: 118rpx;
+  border-left: 24rpx solid transparent;
+  border-right: 24rpx solid transparent;
+  border-top: 24rpx solid transparent;
+  border-bottom: 24rpx solid #E9F2FF;
+  background: transparent;
+}
+.result-score.friend::before {
+  left: 424rpx;
+}
+.result-score.self::before {
+  display: none;
+}
+.result-score > .score-item {
+  display: flex;
+}
+.result-score > .score-item + .score-item {
+  margin-top: 26rpx;
+}
+.score-item > .label {
+  width: 110rpx;
+  color: #6D6E6F;
+  font-size: 30rpx;
+  text-align: center;
+}
+.score-item > .progress {
+  width: calc(100% - 110rpx - 60rpx);
+  border-radius: 42%;
+  overflow: hidden;
+}
+.score-item > .progress > progress {
+  height: 40rpx;
+}
+.score-item > .score {
+  width: 90rpx;
+  font-size: 30rpx;
+  color: #6D6E6F;
+  text-align: center;
+}
+
+.result-words .title {
+  margin: 36rpx 0;
+  text-align: center;
+  font-size: 30rpx;
+}
+.result-words .title .wrong {
+  color: #F05474;
+}
+.result-words .title .and {
+  padding: 0 6px;
+  color: #999999;
+}
+.result-words .title .leak {
+  color: #999999;
+}
+.result-words .words > .word {
+  display: inline-block;
+  margin: 0 8rpx;
+  padding: 7rpx 14rpx;
+  font-size: 26rpx;
+  background: #E0EDFF;
+  border-radius: 4rpx;
+}
+.result-words .words > .wrong {
+  color: #F05474;
+}
+.result-words .words > .leak {
+  color: #999999;
+}
+.result-rank {
+  font-size: 28rpx;
+}
+
+.result-share {
+  padding: 55rpx 0;
+}
+.result-share .share-btn {
+  display: inline-block;
+  width: 80%;
+  height: 90rpx;
+  color: #fff;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  border-radius: 8rpx;
+  border: 1px solid #fff;
+  background: transparent;
+}
+
+.ads-box {
+  margin-top: 60rpx;
+}

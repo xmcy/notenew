@@ -1,0 +1,71 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wx2e5ed888ee2d248a",
+	"projectname": "%E6%B5%8B%E8%AF%95%E5%B0%8F%E7%BA%B8%E6%9D%A1",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "page/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "挑战结果",
+					"pathName": "page/result/result",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享页",
+					"pathName": "page/share/share",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "分片录音",
+					"pathName": "page/recorder/recorder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "录音",
+					"pathName": "page/recorder/recorder",
+					"query": ""
+				}
+			]
+		}
+	}
+}

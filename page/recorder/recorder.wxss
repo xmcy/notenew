@@ -1,0 +1,221 @@
+  .container {
+    background: rgba(32, 34, 46, 1);
+  }
+
+  .active {
+    background-color: #262c3a !important;
+  }
+
+  .submitOff {
+    background-color: #c1c1c1 !important;
+  }
+
+  .challengeGoal {
+    font-size: 32rpx;
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: #20222E;
+    color: #fff;
+    text-align: center;
+  }
+
+  .challengeGoal view {
+    height: 80rpx;
+    line-height: 80rpx;
+  }
+
+  .recording{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100rpx);
+    width: 200rpx;
+    height: 200rpx;
+    left: 275rpx;
+    z-index: 99;
+  }
+  .listenIcon{
+    background-color:rgba(0,0,0,.4);
+}
+.listenImage{
+   width: 100rpx;
+   height: 76rpx;
+   display: block;
+   margin: 62rpx auto;
+   color: #fff;
+}
+  .targetVideo {
+    width: 100%;
+    height: 450rpx;
+    display: block;
+    cursor: pointer;
+  }
+
+  .videoProgress {
+    width: 100%;
+    height: 8rpx;
+  }
+
+  .controls {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .9;
+  }
+
+  .clickMask {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1;
+    position: absolute;
+  }
+
+  .poster {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .classicShow {
+    width: 204rpx;
+    height: 74rpx;
+    background: #3B8AFC;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 74rpx;
+    color: #fff;
+    position: absolute;
+    top: 36.6%;
+    left: 150rpx;
+    font-size: 28rpx;
+  }
+
+  .nochallenge {
+    width: 204rpx;
+    height: 74rpx;
+    background: #3B8AFC;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 74rpx;
+    color: #fff;
+    position: absolute;
+    top: 36.6%;
+    left: 50%;
+    transform: translateX(-102rpx);
+    font-size: 28rpx;
+  }
+
+  .challengeShow {
+    width: 204rpx;
+    height: 74rpx;
+    background: #fff;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 74rpx;
+    color: #000;
+    position: absolute;
+    top: 36.6%;
+    left: 413rpx;
+    font-size: 28rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .challengeShow.isSelf {
+    left: 280rpx;
+  }
+
+  button:hover,
+  button:focus,
+  button:active {
+    background-color: #262c3a;
+  }
+
+  .btnHover {
+    background-color: #262c3a;
+  }
+
+  .recorderWarpper {
+    margin: 30rpx 0 0;
+    background: rgba(32, 34, 46, 1);
+    border-top: 1px solid #373943;
+    min-height: 800rpx;
+    position: relative;
+  }
+
+  .recorderLine {
+    padding: 30rpx;
+    border-bottom: 1px solid #373943;
+    // position: relative;
+  }
+  .lyric,
+  .actions {
+    vertical-align: middle;
+    display: table-cell;
+  }
+  .lyric {
+    width: 500rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .4);
+  }
+  .actions {
+    text-align: center;
+    width: calc(100% - 530rpx);
+    white-space: nowrap;
+  }
+  .pre_lis,
+  .repeatVideo {
+    display: inline-block;
+    font-size: 20rpx;
+    width: 100rpx;
+    color: #fff;
+    text-align: center;
+  }
+  .recorderLine .record-btn {
+    margin-left: 50rpx;
+  }
+  .recorderLine .get-info-btn {
+    display: inline-blockl;
+    padding: 0;
+    margin-left: 50rpx;
+    font-size: 20rpx;
+    color: #fff;
+    background: transparent;
+    line-height: 1;
+    border-radius: 0;
+  }
+  .recorderLine .get-info-btn::after {
+    border: 0;
+  }
+  .recorderLine image {
+    width: 66rpx;
+    height: 66rpx;
+    display: block;
+    margin: 0 auto 8rpx;
+  }
+
+  .bottomBar {
+    width: 100%;
+    padding: 40rpx 0;
+    background-color: #262c3a;
+  }
+
+  .submitBtn {
+    width: 90%;
+    height: 90rpx;
+    line-height: 90rpx;
+    color: #fff;
+    background: rgba(46, 130, 252, 1);
+    border-radius: 8px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .ads-box {
+    margin-top: 60rpx;
+  }
